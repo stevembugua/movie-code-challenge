@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-y: hidden;
+
+}
+
+.app{
+    display: flex;
+}
+
+.movies-list {
+    background: hsla(296, 100%, 6%, 1);
+
+    background: linear-gradient(225deg, hsla(296, 100%, 6%, 1) 58%, hsla(5, 90%, 24%, 1) 100%);
+
+    background: -moz-linear-gradient(225deg, hsla(296, 100%, 6%, 1) 58%, hsla(5, 90%, 24%, 1) 100%);
+
+    background: -webkit-linear-gradient(225deg, hsla(296, 100%, 6%, 1) 58%, hsla(5, 90%, 24%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1F0021", endColorstr="#751006", GradientType=1 );
+    height: 100vh;
+    width: 20%;
+    list-style-type: none;
+}
+.movies-list  li{
+    color: lime;
+    padding: .5em;
+    cursor: pointer;
+}
+.movies-list  li:hover{
+    background-color: lime;
+    color: black;
+    font-weight: bolder;
+}
+
+.movies-list  li:nth-child(1){
+    margin-bottom: 1em;
+    background-color: red;
+    color: white;
+    font-weight: 900;
+    cursor: inherit;
+}
+
+
+.movie{
+    width: 80%;
+    height: 100vh;
+    position: relative;
+    background: rgb(80,80,80);
+    background: radial-gradient(circle, rgba(80,80,80,.9) 0%, rgba(10,15,21,1) 60%);
+}
+.movie img {
+        width: 100%;
+        max-width:100%;
+        max-height:100%;
+        /* object-fit: cover; */
+        height: 100%;
+        opacity: .6;
+
+}
+.movie .description  {
+     position: absolute;
+     bottom: 10em;
+     left: 2em;
+     padding: 1em;
+     width: 40%;
+     background-color: rgba(0,0,0,.4);
+     border-radius: 1em;
+     
+}
+
+.movie .description p{
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.movie .title{
+    position: absolute;
+    font-size: 2.5em;
+    color: white;
+    top: 3em;
+    left: 2.6em;
+    scale: 1.3;
+    font-family: 'Poppins', sans-serif;
+    width: 12em;
+
+}
+.movie .title h2{
+    line-height: 4rem;
+}
+
+.movie .tickets {
+    display: flex;
+    gap:1em;
+    margin-top: 2em;
+    flex-wrap: wrap;
+}
+.movie .tickets p{
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+    gap: .8em;
+}
+
+.call-to-action {
+    position: absolute;
+    bottom: 5em;
+    left: 2.5em;
+
+}
+
+.call-to-action button {
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: .5em 1em;
+    border-radius: .2em;
+    font-weight: bold;
+    color: red;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+.call-to-action button:hover{
+    scale: 1.1;
+    transition: scale 500ms;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
