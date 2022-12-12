@@ -1,3 +1,4 @@
+//accessing the html 
 const filmsList = document.querySelector('.movies-list');
 const movieCover = document.querySelector('.cover');
 const movieTitle = document.querySelector('#title');
@@ -14,6 +15,8 @@ const buyMovieTicket  =document.querySelector('.buy-ticket')
 let currentMovieId =null;
 let allMovies = [];
 
+//fetch first movie to be displayed when the page loads  movies
+
 const fetchMovies = async()=>await fetch('http://localhost:3000/films')
 .then((res)=>res.json())
 .then((data)=>{
@@ -24,16 +27,17 @@ const fetchMovies = async()=>await fetch('http://localhost:3000/films')
    displayMovies(data)
 })
 
+//fetch all movies 
 
 const fetchFirstMovie = async()=>await fetch('http://localhost:3000/films/1')
 .then((res)=>res.json())
 .then((data)=>{
    showSingleMovie(data)
-   console.log('the length is : ' + typeof data)
 })
 
 
 
+//display the movie to the web page
 
 const displayMovies =(data)=>{
     data.map((movie, index)=>{
@@ -53,6 +57,7 @@ const displayMovies =(data)=>{
 }
 
 
+//manipulation 
 
 const showSingleMovie = (movie)=>{
     movieCover.src = movie.poster;
@@ -70,7 +75,7 @@ buyMovieTicket.addEventListener('click',()=>{
     purchaseTicket(allMovies[currentMovieId])
 })
 
-
+//condition to purchasing the ticket
 const purchaseTicket = (movie)=>{
     if(!(movie.tickets_sold > movie.capacity ) && (movie.capacity - movie.tickets_sold)>=1){
 
@@ -83,7 +88,7 @@ const purchaseTicket = (movie)=>{
     }
 }
 
-
+//calling the function
 fetchMovies()
 fetchFirstMovie()
 
