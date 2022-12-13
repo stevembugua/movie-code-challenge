@@ -1,15 +1,3 @@
-//accessing the html 
-const filmsList = document.querySelector('.movies-list');
-const movieCover = document.querySelector('.cover');
-const movieTitle = document.querySelector('#title');
-const movieDescription = document.querySelector('#description')
-const theatreCapacity  =document.querySelector('.capacity')
-const ticketsAvailable = document.querySelector('.remainder')
-const movieShowtime = document.querySelector('.showtime')
-const movieRunTime = document.querySelector('.runtime')
-const buyMovieTicket  =document.querySelector('.buy-ticket')
-
-
 //get the clicked movie id to use later 
 
 let currentMovieId =null;
@@ -55,6 +43,17 @@ const displayMovies =(data)=>{
 
     })
 }
+
+//accessing the html 
+const filmsList = document.querySelector('.movies-list');
+const movieCover = document.querySelector('.cover');
+const movieTitle = document.querySelector('#title');
+const movieDescription = document.querySelector('#description')
+const theatreCapacity  =document.querySelector('.capacity')
+const ticketsAvailable = document.querySelector('.remainder')
+const movieShowtime = document.querySelector('.showtime')
+const movieRunTime = document.querySelector('.runtime')
+const buyMovieTicket  =document.querySelector('.buy-ticket')
 
 
 //manipulation 
