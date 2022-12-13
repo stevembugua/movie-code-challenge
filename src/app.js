@@ -5,7 +5,7 @@ let allMovies = [];
 
 //fetch first movie to be displayed when the page loads  movies
 
-const fetchMovies = async()=>await fetch('http://localhost:3000/films')
+const fetchMoviesFromJson = async()=>await fetch('http://localhost:3000/films')
 .then((res)=>res.json())
 .then((data)=>{
     if( typeof data === Object){
@@ -17,7 +17,7 @@ const fetchMovies = async()=>await fetch('http://localhost:3000/films')
 
 //fetch all movies 
 
-const fetchFirstMovie = async()=>await fetch('http://localhost:3000/films/1')
+const fetchFirstMovieFromJson = async()=>await fetch('http://localhost:3000/films/1')
 .then((res)=>res.json())
 .then((data)=>{
    showSingleMovie(data)
@@ -88,6 +88,6 @@ const purchaseTicket = (movie)=>{
 }
 
 //calling the function
-fetchMovies()
-fetchFirstMovie()
+fetchMoviesFromJson()
+fetchFirstMovieFromJson()
 
