@@ -16,8 +16,15 @@ body{
 }
 
 .movies-list {
+    background: hsla(296, 100%, 6%, 1);
 
-    background-color: black;
+    background: linear-gradient(225deg, hsla(296, 100%, 6%, 1) 58%, hsla(5, 90%, 24%, 1) 100%);
+
+    background: -moz-linear-gradient(225deg, hsla(296, 100%, 6%, 1) 58%, hsla(5, 90%, 24%, 1) 100%);
+
+    background: -webkit-linear-gradient(225deg, hsla(296, 100%, 6%, 1) 58%, hsla(5, 90%, 24%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1F0021", endColorstr="#751006", GradientType=1 );
     height: 100vh;
     width: 20%;
     list-style-type: none;
