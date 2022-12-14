@@ -14,71 +14,70 @@ const buyMovieTicket  =document.querySelector('.buy-ticket')
 let currentMovieId =null;
 let allMovies = [];
 
-const fetchMovies = async()=>await fetch('http://localhost:3000/films')
-.then((res)=>res.json())
-.then((data)=>{
-    if( typeof data === Object){
-        showSingleMovie(data)
+ const fetchMovies = async()=>await fetch('https://stevembugua.github.io//db.json')
+ .then((res)=>res.json())
+ .then((data => {
+     if( typeof films === Object) {
+        showSingleMovie(films)
     }
   
-   displayMovies(data)
-})
+    data.films.forEach(films => displayMovies(films))
+}))
 
 
-const fetchFirstMovie = async()=>await fetch('http://localhost:3000/films/1')
+const fetchFirstMovie = async()=>await fetch('https://stevembugua.github.io/db.json')
 .then((res)=>res.json())
 .then((data)=>{
-   showSingleMovie(data)
-   console.log('the length is : ' + typeof data)
+    showSingleMovie(data.films[0])
+   
 })
 
 
 
 
-const displayMovies =(data)=>{
-    data.map((movie, index)=>{
+const displayMovies =(films)=>{
+   /* data.map((movie, index)=>{
 
         //populate movies array
-        allMovies.push(movie)
+        allMovies.push(movie)*/
 
         const listItem = document.createElement('li')
-        listItem.innerHTML = movie.title;
+        listItem.innerHTML = films.title;
         listItem.addEventListener('click',()=>{
-           showSingleMovie(movie);
-           currentMovieId = index
+           showSingleMovie(films);
+        
         })
         filmsList.appendChild(listItem)
 
-    })
-}
+    }
 
 
 
-const showSingleMovie = (movie)=>{
-    movieCover.src = movie.poster;
-    movieTitle.innerHTML = movie.title;
-    movieDescription.innerHTML = movie.description;
-    theatreCapacity.innerHTML = movie.capacity;
-    ticketsAvailable.innerHTML = parseInt(movie.capacity) - parseInt(movie.tickets_sold);
-    movieShowtime.innerHTML = ' : ' + movie.showtime;
-    movieRunTime.innerHTML =' : ' +  movie.runtime + ' mins'
-} 
 
+const showSingleMovie = (films)=>{
+    movieCover.src = films.poster;
+    movieTitle.innerHTML = films.title;
+    movieDescription.innerHTML = films.description;
+    theatreCapacity.innerHTML = films.capacity;
+    availabletickets=films.capacity-films.tickets_sold
+    ticketsAvailable.innerHTML = availabletickets
+    movieShowtime.innerHTML = ' : ' + films.showtime;
+    movieRunTime.innerHTML =' : ' +  films.runtime + ' mins'
+    
 //buy the movie ticket 
 
 buyMovieTicket.addEventListener('click',()=>{
-    purchaseTicket(allMovies[currentMovieId])
+    purchaseTicket(films)
 })
+}
 
 
-const purchaseTicket = (movie)=>{
-    if(!(movie.tickets_sold > movie.capacity ) && (movie.capacity - movie.tickets_sold)>=1){
-
-        movie.tickets_sold +=1;
+const purchaseTicket = (films)=>{
+    if(availabletickets>=0) {
         
-        ticketsAvailable.innerHTML = movie.capacity - movie.tickets_sold;
+        ticketsAvailable.innerHTML =  `${availabletickets-=1}`
 
-    } else {
+    } else if (availabletickets < 0) {
          ticketsAvailable.innerHTML = ' : Sorry, theatre is full'
     }
 }
