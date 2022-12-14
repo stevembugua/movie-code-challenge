@@ -15,12 +15,12 @@ const fetchMovies = async()=>await fetch('https://stevembugua.github.io/db.json'
 
 //fetch all movies 
 
-const fetchFirstMovie = async()=>await fetch('https://stevembugua.github.io/db.json/1')
-.then((res)=>res.json())
-.then((data)=>{
-   showSingleMovie(data)
-   console.log('the length is : ' + typeof data)
-})
+// const fetchFirstMovie = async()=>await fetch('https://stevembugua.github.io/db.json/1')
+// .then((res)=>res.json())
+// .then((data)=>{
+//    showSingleMovie(data)
+//    console.log('the length is : ' + typeof data)
+// })
 
 
 
