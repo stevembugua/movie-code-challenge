@@ -10,6 +10,11 @@ to the movie that you have decided to watch.
 
 If you haven't already, fork and clone this lesson into your local environment.
 
+# alternative 1
+- Use the github pages link provided below to run the program
+
+            https://stevembugua.github.io/movie-code-challenge/
+
 # Quick Review to clone the program into your local environment
 
 1. Navigate to https://github.com/stevembugua/movie-code-challenge
