@@ -22,20 +22,20 @@ body{
     list-style-type: none;
 }
 .movies-list  li{
-    color: lime;
+    color: white;
     padding: .5em;
     cursor: pointer;
 }
 .movies-list  li:hover{
-    background-color: lime;
-    color: black;
+    background-color: crimson;
+    color: white;
     font-weight: bolder;
 }
 
 .movies-list  li:nth-child(1){
     margin-bottom: 1em;
-    background-color: lime;
-    color: black;
+    background-color: crimson;
+    color: white;
     font-weight: 900;
     cursor: inherit;
 }
